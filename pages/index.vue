@@ -6,10 +6,11 @@
 
     <!-- 组件懒加载 -->
     <h1>Mountains</h1>
-
-    <!-- TODO -->
-    <!-- <LazyMountainsList v-if="show" /> -->
+    <LazyLazyMountainsList v-if="show" />
     <button v-if="!show" @click="show = true">show list</button>
+    <LazyLazyText v-if="show"></LazyLazyText>
+    <button @click="show = !show">btn</button>
+    {{ show }}
 
     <div v-for="todo in todos.data" :key="todo.id">
       <input type="checkbox" v-model="todo.completed" />
